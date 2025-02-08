@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package example;
+
+service Ticker {
+  rpc Tick(TickRequest) returns (TickResponse);
+}
+
+message TickRequest {
+}
+
+message TickResponse {
+  string message = 1;
+  int32 status = 2;
+}

@@ -1,0 +1,11 @@
+betterproto[compiler]==2.0.0b5
+grpcio==1.69.0
+grpcio-tools==1.69.0
+grpclib==0.4.7
+h2==4.1.0
+hpack==4.0.0
+hyperframe==6.0.1
+multidict==6.1.0
+protobuf==5.29.3
+setuptools==75.8.0
+stringcase==1.2.0
