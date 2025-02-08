@@ -17,7 +17,10 @@ func main() {
 
 	ticker := time.NewTicker(1 * time.Minute)
 	defer ticker.Stop()
-	tickClient := NewTickClient(*serviceURL)
+	tickClient, err := NewTickClient(*serviceURL)
+	if err != nil {
+		fmt.Println(err)
+	}
 	for {
 		select {
 		case <-ticker.C:
