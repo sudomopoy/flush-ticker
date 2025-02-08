@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"log"
 	"time"
 
 	pb "github.com/sudomopoy/flush-ticker/gen/go/tick/v1"
@@ -34,18 +33,4 @@ func (c *GrpcClient) Tick() (*pb.TickResponse, error) {
 
 func (c *GrpcClient) Close() error {
 	return c.conn.Close()
-}
-
-func main() {
-	client, err := NewTickClient("localhost:8080")
-	if err != nil {
-		log.Fatalf("failed to create client: %v", err)
-	}
-	defer client.Close()
-
-	resp, err := client.Tick()
-	if err != nil {
-		log.Fatalf("failed to call Tick: %v", err)
-	}
-	log.Printf("Tick response: %v", resp)
 }
